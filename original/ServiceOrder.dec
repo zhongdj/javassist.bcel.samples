@@ -1,0 +1,213 @@
+Classfile /Users/Barry/Professional/Workspaces/seed/javassist.samples/target/classes/net/madz/lifecycle/solutionOne/ServiceOrder.class
+  Last modified 2013-10-21; size 2055 bytes
+  MD5 checksum ac7a3e97dd94ffb2469a06bb17f246a8
+  Compiled from "ServiceOrder.java"
+public class net.madz.lifecycle.solutionOne.ServiceOrder implements net.madz.lifecycle.solutionOne.IServiceOrder
+  SourceFile: "ServiceOrder.java"
+  RuntimeVisibleAnnotations:
+    0: #51(#26=c#52)
+  InnerClasses:
+       public static #28= #27 of #58; //Transitions=class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions of class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta
+       public static #31= #30 of #27; //Schedule=class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Schedule of class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions
+       public static #35= #34 of #27; //Start=class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Start of class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions
+       public static #39= #38 of #27; //Finish=class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Finish of class net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #9.#53         //  java/lang/Object."<init>":()V
+   #2 = Class              #54            //  net/madz/lifecycle/solutionOne/ServiceOrder
+   #3 = Methodref          #2.#53         //  net/madz/lifecycle/solutionOne/ServiceOrder."<init>":()V
+   #4 = Long               2l
+   #6 = Long               3l
+   #8 = Methodref          #2.#55         //  net/madz/lifecycle/solutionOne/ServiceOrder.allocateResources:(JJJ)V
+   #9 = Class              #56            //  java/lang/Object
+  #10 = Class              #57            //  net/madz/lifecycle/solutionOne/IServiceOrder
+  #11 = Utf8               <init>
+  #12 = Utf8               ()V
+  #13 = Utf8               Code
+  #14 = Utf8               LineNumberTable
+  #15 = Utf8               LocalVariableTable
+  #16 = Utf8               this
+  #17 = Utf8               Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+  #18 = Utf8               allocateResources
+  #19 = Utf8               (JJJ)V
+  #20 = Utf8               summaryPlanId
+  #21 = Utf8               J
+  #22 = Utf8               truckResourceId
+  #23 = Utf8               plangResourceId
+  #24 = Utf8               RuntimeVisibleAnnotations
+  #25 = Utf8               Lnet/madz/lifecycle/annotations/Transition;
+  #26 = Utf8               value
+  #27 = Class              #59            //  net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions
+  #28 = Utf8               Transitions
+  #29 = Utf8               InnerClasses
+  #30 = Class              #60            //  net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Schedule
+  #31 = Utf8               Schedule
+  #32 = Utf8               Lnet/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Schedule;
+  #33 = Utf8               confirmStart
+  #34 = Class              #61            //  net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Start
+  #35 = Utf8               Start
+  #36 = Utf8               Lnet/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Start;
+  #37 = Utf8               confirmFinish
+  #38 = Class              #62            //  net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Finish
+  #39 = Utf8               Finish
+  #40 = Utf8               Lnet/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Finish;
+  #41 = Utf8               getServiceOrderState
+  #42 = Utf8               ()Ljava/lang/String;
+  #43 = Utf8               Lnet/madz/lifecycle/annotations/StateIndicator;
+  #44 = Utf8               main
+  #45 = Utf8               ([Ljava/lang/String;)V
+  #46 = Utf8               args
+  #47 = Utf8               [Ljava/lang/String;
+  #48 = Utf8               order
+  #49 = Utf8               SourceFile
+  #50 = Utf8               ServiceOrder.java
+  #51 = Utf8               Lnet/madz/lifecycle/annotations/LifecycleMeta;
+  #52 = Utf8               Lnet/madz/lifecycle/solutionOne/ServiceableLifecycleMeta;
+  #53 = NameAndType        #11:#12        //  "<init>":()V
+  #54 = Utf8               net/madz/lifecycle/solutionOne/ServiceOrder
+  #55 = NameAndType        #18:#19        //  allocateResources:(JJJ)V
+  #56 = Utf8               java/lang/Object
+  #57 = Utf8               net/madz/lifecycle/solutionOne/IServiceOrder
+  #58 = Class              #63            //  net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta
+  #59 = Utf8               net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions
+  #60 = Utf8               net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Schedule
+  #61 = Utf8               net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Start
+  #62 = Utf8               net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta$Transitions$Finish
+  #63 = Utf8               net/madz/lifecycle/demo/standalone/ServiceableLifecycleMeta
+{
+  public net.madz.lifecycle.solutionOne.ServiceOrder();
+    Signature: ()V
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 11: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             0       5     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0       
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return        
+      LineNumberTable:
+        line 11: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+         0       5     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+
+  public void allocateResources(long, long, long);
+    Signature: (JJJ)V
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 16: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+         0       1     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+         0       1     1 summaryPlanId   J
+         0       1     3 truckResourceId   J
+         0       1     5 plangResourceId   J
+    Code:
+      stack=0, locals=7, args_size=4
+         0: return        
+      LineNumberTable:
+        line 16: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               0       1     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+               0       1     1 summaryPlanId   J
+               0       1     3 truckResourceId   J
+               0       1     5 plangResourceId   J
+    RuntimeVisibleAnnotations:
+      0: #25(#26=c#32)
+
+  public void confirmStart();
+    Signature: ()V
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 44: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             0       1     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    Code:
+      stack=0, locals=1, args_size=1
+         0: return        
+      LineNumberTable:
+        line 44: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               0       1     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    RuntimeVisibleAnnotations:
+      0: #25(#26=c#36)
+
+  public void confirmFinish();
+    Signature: ()V
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 49: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             0       1     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    Code:
+      stack=0, locals=1, args_size=1
+         0: return        
+      LineNumberTable:
+        line 49: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               0       1     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    RuntimeVisibleAnnotations:
+      0: #25(#26=c#40)
+
+  public java.lang.String getServiceOrderState();
+    Signature: ()Ljava/lang/String;
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 54: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             0       2     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aconst_null   
+         1: areturn       
+      LineNumberTable:
+        line 54: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               0       2     0  this   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    RuntimeVisibleAnnotations:
+      0: #43()
+
+  public static void main(java.lang.String[]);
+    Signature: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    LineNumberTable:
+      line 58: 0
+      line 59: 8
+      line 60: 19
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             0      20     0  args   [Ljava/lang/String;
+             8      12     1 order   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+    Code:
+      stack=7, locals=2, args_size=1
+         0: new           #2                  // class net/madz/lifecycle/solutionOne/ServiceOrder
+         3: dup           
+         4: invokespecial #3                  // Method "<init>":()V
+         7: astore_1      
+         8: aload_1       
+         9: lconst_1      
+        10: ldc2_w        #4                  // long 2l
+        13: ldc2_w        #6                  // long 3l
+        16: invokevirtual #8                  // Method allocateResources:(JJJ)V
+        19: return        
+      LineNumberTable:
+        line 58: 0
+        line 59: 8
+        line 60: 19
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               0      20     0  args   [Ljava/lang/String;
+               8      12     1 order   Lnet/madz/lifecycle/solutionOne/ServiceOrder;
+}

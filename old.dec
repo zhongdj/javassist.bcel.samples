@@ -1,0 +1,239 @@
+Classfile /Users/Barry/Professional/Workspaces/seed/javassist.samples/target/classes/net/madz/lifecycle/demo/standalone/StringBuilder.class
+  Last modified 2013-10-21; size 1379 bytes
+  MD5 checksum 02ba6fb0f1b0fd956e7af628f6fac66c
+  Compiled from "StringBuilder.java"
+public class net.madz.lifecycle.demo.standalone.StringBuilder
+  SourceFile: "StringBuilder.java"
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #17.#42        //  java/lang/Object."<init>":()V
+   #2 = Class              #43            //  net/madz/lifecycle/demo/standalone/StringBuilder
+   #3 = Methodref          #2.#42         //  net/madz/lifecycle/demo/standalone/StringBuilder."<init>":()V
+   #4 = Methodref          #44.#45        //  java/lang/Integer.parseInt:(Ljava/lang/String;)I
+   #5 = Methodref          #2.#46         //  net/madz/lifecycle/demo/standalone/StringBuilder.buildString:(I)Ljava/lang/String;
+   #6 = Fieldref           #47.#48        //  java/lang/System.out:Ljava/io/PrintStream;
+   #7 = Class              #49            //  java/lang/StringBuilder
+   #8 = Methodref          #7.#42         //  java/lang/StringBuilder."<init>":()V
+   #9 = String             #50            //  Constructed string of length 
+  #10 = Methodref          #7.#51         //  java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #11 = Methodref          #52.#53        //  java/lang/String.length:()I
+  #12 = Methodref          #7.#54         //  java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+  #13 = Methodref          #7.#55         //  java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #14 = Methodref          #56.#57        //  java/io/PrintStream.println:(Ljava/lang/String;)V
+  #15 = String             #58            //  
+  #16 = Methodref          #7.#59         //  java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+  #17 = Class              #60            //  java/lang/Object
+  #18 = Utf8               <init>
+  #19 = Utf8               ()V
+  #20 = Utf8               Code
+  #21 = Utf8               LineNumberTable
+  #22 = Utf8               LocalVariableTable
+  #23 = Utf8               this
+  #24 = Utf8               Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+  #25 = Utf8               main
+  #26 = Utf8               ([Ljava/lang/String;)V
+  #27 = Utf8               result
+  #28 = Utf8               Ljava/lang/String;
+  #29 = Utf8               i
+  #30 = Utf8               I
+  #31 = Utf8               argv
+  #32 = Utf8               [Ljava/lang/String;
+  #33 = Utf8               inst
+  #34 = Utf8               StackMapTable
+  #35 = Class              #43            //  net/madz/lifecycle/demo/standalone/StringBuilder
+  #36 = Utf8               buildString
+  #37 = Utf8               (I)Ljava/lang/String;
+  #38 = Utf8               length
+  #39 = Class              #61            //  java/lang/String
+  #40 = Utf8               SourceFile
+  #41 = Utf8               StringBuilder.java
+  #42 = NameAndType        #18:#19        //  "<init>":()V
+  #43 = Utf8               net/madz/lifecycle/demo/standalone/StringBuilder
+  #44 = Class              #62            //  java/lang/Integer
+  #45 = NameAndType        #63:#64        //  parseInt:(Ljava/lang/String;)I
+  #46 = NameAndType        #36:#37        //  buildString:(I)Ljava/lang/String;
+  #47 = Class              #65            //  java/lang/System
+  #48 = NameAndType        #66:#67        //  out:Ljava/io/PrintStream;
+  #49 = Utf8               java/lang/StringBuilder
+  #50 = Utf8               Constructed string of length 
+  #51 = NameAndType        #68:#69        //  append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #52 = Class              #61            //  java/lang/String
+  #53 = NameAndType        #38:#70        //  length:()I
+  #54 = NameAndType        #68:#71        //  append:(I)Ljava/lang/StringBuilder;
+  #55 = NameAndType        #72:#73        //  toString:()Ljava/lang/String;
+  #56 = Class              #74            //  java/io/PrintStream
+  #57 = NameAndType        #75:#76        //  println:(Ljava/lang/String;)V
+  #58 = Utf8               
+  #59 = NameAndType        #68:#77        //  append:(C)Ljava/lang/StringBuilder;
+  #60 = Utf8               java/lang/Object
+  #61 = Utf8               java/lang/String
+  #62 = Utf8               java/lang/Integer
+  #63 = Utf8               parseInt
+  #64 = Utf8               (Ljava/lang/String;)I
+  #65 = Utf8               java/lang/System
+  #66 = Utf8               out
+  #67 = Utf8               Ljava/io/PrintStream;
+  #68 = Utf8               append
+  #69 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #70 = Utf8               ()I
+  #71 = Utf8               (I)Ljava/lang/StringBuilder;
+  #72 = Utf8               toString
+  #73 = Utf8               ()Ljava/lang/String;
+  #74 = Utf8               java/io/PrintStream
+  #75 = Utf8               println
+  #76 = Utf8               (Ljava/lang/String;)V
+  #77 = Utf8               (C)Ljava/lang/StringBuilder;
+{
+  public net.madz.lifecycle.demo.standalone.StringBuilder();
+    Signature: ()V
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 3: 0
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             0       5     0  this   Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0       
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return        
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               0       5     0  this   Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+
+  public static void main(java.lang.String[]);
+    Signature: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    LineNumberTable:
+      line 15: 0
+      line 16: 8
+      line 17: 16
+      line 18: 27
+      line 16: 55
+      line 20: 61
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+            27      28     3 result   Ljava/lang/String;
+            10      51     2     i   I
+             0      62     0  argv   [Ljava/lang/String;
+             8      54     1  inst   Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+    Code:
+      stack=3, locals=4, args_size=1
+         0: new           #2                  // class net/madz/lifecycle/demo/standalone/StringBuilder
+         3: dup           
+         4: invokespecial #3                  // Method "<init>":()V
+         7: astore_1      
+         8: iconst_0      
+         9: istore_2      
+        10: iload_2       
+        11: aload_0       
+        12: arraylength   
+        13: if_icmpge     61
+        16: aload_1       
+        17: aload_0       
+        18: iload_2       
+        19: aaload        
+        20: invokestatic  #4                  // Method java/lang/Integer.parseInt:(Ljava/lang/String;)I
+        23: invokevirtual #5                  // Method buildString:(I)Ljava/lang/String;
+        26: astore_3      
+        27: getstatic     #6                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        30: new           #7                  // class java/lang/StringBuilder
+        33: dup           
+        34: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        37: ldc           #9                  // String Constructed string of length 
+        39: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        42: aload_3       
+        43: invokevirtual #11                 // Method java/lang/String.length:()I
+        46: invokevirtual #12                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        49: invokevirtual #13                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        52: invokevirtual #14                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        55: iinc          2, 1
+        58: goto          10
+        61: return        
+      LineNumberTable:
+        line 15: 0
+        line 16: 8
+        line 17: 16
+        line 18: 27
+        line 16: 55
+        line 20: 61
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+              27      28     3 result   Ljava/lang/String;
+              10      51     2     i   I
+               0      62     0  argv   [Ljava/lang/String;
+               8      54     1  inst   Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+      StackMapTable: number_of_entries = 2
+           frame_type = 253 /* append */
+             offset_delta = 10
+        locals = [ class net/madz/lifecycle/demo/standalone/StringBuilder, int ]
+           frame_type = 250 /* chop */
+          offset_delta = 50
+
+
+  public java.lang.String buildString(int);
+    Signature: (I)Ljava/lang/String;
+    flags: ACC_PUBLIC
+    LineNumberTable:
+      line 24: 0
+      line 25: 3
+      line 26: 10
+      line 25: 36
+      line 29: 42
+    LocalVariableTable:
+      Start  Length  Slot  Name   Signature
+             5      37     3     i   I
+             0      44     0  this   Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+             0      44     1 length   I
+             3      41     2 result   Ljava/lang/String;
+    Code:
+      stack=3, locals=4, args_size=2
+         0: ldc           #15                 // String 
+         2: astore_2      
+         3: iconst_0      
+         4: istore_3      
+         5: iload_3       
+         6: iload_1       
+         7: if_icmpge     42
+        10: new           #7                  // class java/lang/StringBuilder
+        13: dup           
+        14: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        17: aload_2       
+        18: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        21: iload_3       
+        22: bipush        26
+        24: irem          
+        25: bipush        97
+        27: iadd          
+        28: i2c           
+        29: invokevirtual #16                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+        32: invokevirtual #13                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        35: astore_2      
+        36: iinc          3, 1
+        39: goto          5
+        42: aload_2       
+        43: areturn       
+      LineNumberTable:
+        line 24: 0
+        line 25: 3
+        line 26: 10
+        line 25: 36
+        line 29: 42
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+               5      37     3     i   I
+               0      44     0  this   Lnet/madz/lifecycle/demo/standalone/StringBuilder;
+               0      44     1 length   I
+               3      41     2 result   Ljava/lang/String;
+      StackMapTable: number_of_entries = 2
+           frame_type = 253 /* append */
+             offset_delta = 5
+        locals = [ class java/lang/String, int ]
+           frame_type = 250 /* chop */
+          offset_delta = 36
+
+}
