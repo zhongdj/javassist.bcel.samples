@@ -16,6 +16,7 @@ import org.apache.bcel.classfile.InnerClasses;
 import org.apache.bcel.classfile.JavaClass;
 import org.apache.bcel.classfile.Method;
 import org.apache.bcel.generic.ArrayType;
+import org.apache.bcel.generic.BasicType;
 import org.apache.bcel.generic.ClassGen;
 import org.apache.bcel.generic.ConstantPoolGen;
 import org.apache.bcel.generic.ICONST;
@@ -30,7 +31,7 @@ import org.apache.bcel.generic.Type;
 
 public class BCELMethodInterceptor {
 
-    private static void addWrapper(ClassGen cgen, Method method, int anonymousInnerClassSeq) {
+    public static void addWrapper(ClassGen cgen, Method method, int anonymousInnerClassSeq) {
         final String interceptingClass = cgen.getClassName();
         final String interceptingMethod = method.getName();
         // set up the construction tools
@@ -71,11 +72,6 @@ public class BCELMethodInterceptor {
         // 2.1 getClass()
         ilist.append(ifact.createNew(InterceptContext.class.getName()));
         ilist.append(InstructionFactory.DUP);
-        // ilist.append(InstructionFactory.createLoad(new
-        // ObjectType(interceptingClass), 0));// this
-        // ilist.append(ifact.createInvoke(interceptingClass, "getClass", new
-        // ObjectType(Class.class.getName()),
-        // Type.NO_ARGS, Constants.INVOKEVIRTUAL));
         ilist.append(new LDC(cgen.getConstantPool().lookupClass(interceptingClass)));
         // 2.2 load this
         ilist.append(InstructionFactory.createLoad(new ObjectType(interceptingClass), 0));// this
@@ -92,15 +88,16 @@ public class BCELMethodInterceptor {
         for ( int i = 0; i < types.length; i++ ) {
             ilist.append(InstructionFactory.DUP);
             ilist.append(new ICONST(i));
-            String className = convertType2ClassName(types[i]);
-            int argumentClassIndex = cgen.getConstantPool().lookupClass(className); // ?
-            if ( -1 >= argumentClassIndex ) {
-                argumentClassIndex = cgen.getConstantPool().addClass(className);
-            }
-            if ( types[i].getSize() > 4 ) {
-                ilist.append(new LDC_W(argumentClassIndex));
+            Type type = types[i];
+            if ( type instanceof BasicType ) {
+                ilist.append(ifact.createGetStatic(convertType2ClassName(type), "TYPE", new ObjectType("java.lang.Class")));
             } else {
-                ilist.append(new LDC(argumentClassIndex));
+                int argumentClassIndex = convertType2ClassIndex(cgen, type);
+                if ( type.getSize() > 4 ) {
+                    ilist.append(new LDC_W(argumentClassIndex));
+                } else {
+                    ilist.append(new LDC(argumentClassIndex));
+                }
             }
             ilist.append(InstructionConstants.AASTORE);
         }
@@ -204,6 +201,31 @@ public class BCELMethodInterceptor {
         ilist.dispose();
     }
 
+    private static int convertType2ClassIndex(ClassGen cgen, Type type) {
+        if ( type instanceof ObjectType ) {
+            String className = type.getSignature();
+            if ( className.startsWith("L") ) {
+                className = className.substring(1);
+            }
+            int leftArrow = className.indexOf("<");
+            if ( -1 < leftArrow ) {
+                className = className.substring(0, leftArrow);
+            }
+            if ( className.endsWith(";") ) {
+                className = className.substring(0, className.length() - 1);
+            }
+            int argumentClassIndex = cgen.getConstantPool().lookupClass(className);
+            if ( -1 >= argumentClassIndex ) {
+                argumentClassIndex = cgen.getConstantPool().addClass(className);
+            }
+            return argumentClassIndex;
+        } else if ( type instanceof ArrayType ) {
+            // unsupport for now
+        }
+        // wrong return
+        throw new UnsupportedOperationException();
+    }
+
     private static String convertType2ClassName(Type type) {
         if ( Type.BOOLEAN.equals(type) ) {
             return Boolean.class.getName();
@@ -218,24 +240,11 @@ public class BCELMethodInterceptor {
         } else if ( Type.INT.equals(type) ) {
             return Integer.class.getName();
         } else if ( Type.LONG.equals(type) ) {
-            return Long.class.getName();
+            return Long.class.getName();// long.class.getName();
         } else if ( Type.SHORT.equals(type) ) {
             return Short.class.getName();
-        } else if ( type instanceof ObjectType ) {
-            String signature = type.getSignature();
-            if ( signature.startsWith("L") ) {
-                signature = signature.substring(1);
-            }
-            int leftArrow = signature.indexOf("<");
-            if ( -1 < leftArrow ) {
-                signature = signature.substring(0, leftArrow);
-            }
-            if ( signature.endsWith(";") ) {
-                signature = signature.substring(0, signature.length() - 1);
-            }
-            return signature;
         } else if ( type instanceof ArrayType ) {}
-        return type.getSignature();
+        throw new UnsupportedOperationException();
     }
 
     public static void main(String[] argv) {

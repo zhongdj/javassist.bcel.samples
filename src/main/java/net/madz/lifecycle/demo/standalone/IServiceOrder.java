@@ -25,7 +25,7 @@ import net.madz.lifecycle.demo.standalone.ServiceableLifecycleMeta.Transitions.S
 public interface IServiceOrder {
 
     @Transition(Schedule.class)
-    void allocateResources(final Long summaryPlanId, final Long truckResourceId, final Long plangResourceId);
+    void allocateResources(final long summaryPlanId, final long truckResourceId, final long plangResourceId);
 
     @Transition(Start.class)
     void confirmStart();

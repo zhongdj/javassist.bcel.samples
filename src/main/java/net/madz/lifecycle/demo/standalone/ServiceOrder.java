@@ -14,7 +14,7 @@ public class ServiceOrder implements IServiceOrder {
 
     @Override
     @Transition(Schedule.class)
-    public void allocateResources(final Long summaryPlanId, final Long truckResourceId, final Long plangResourceId) {
+    public void allocateResources(final long summaryPlanId, final long truckResourceId, final long plangResourceId) {
         long x = 0;
         long y = x;
         long z = 0L;

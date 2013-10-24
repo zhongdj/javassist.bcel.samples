@@ -22,7 +22,7 @@ public class ServiceOrder implements IServiceOrder {
     public void allocateResources(final long summaryPlanId, final long truckResourceId, final long plangResourceId) {
         final InterceptorController<Void> controller = new InterceptorController<Void>();
         final InterceptContext<Void> context = new InterceptContext<Void>(getClass(), this, "allocateResources",
-                new Class[] { Long.class, Long.class, Long.class });
+                new Class[] { Long.TYPE, Long.TYPE, Long.TYPE });
         controller.exec(context, new Callable<Void>() {
 
             @Override

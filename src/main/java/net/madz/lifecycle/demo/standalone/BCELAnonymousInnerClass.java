@@ -440,8 +440,7 @@ public class BCELAnonymousInnerClass {
 
     public static void main(String[] args) throws Throwable {
         BCELAnonymousInnerClass c = new BCELAnonymousInnerClass("net.madz.lifecycle.demo.standalone.ServiceOrder",
-                "allocateResources", new Type[] { new ObjectType(Long.class.getName()),
-                        new ObjectType(Long.class.getName()), new ObjectType(Long.class.getName()) }, 5,
+                "allocateResources", new Type[] { Type.LONG,Type.LONG,Type.LONG }, 5,
                 "java.lang.Object", new Type[0], "java.util.concurrent.Callable", new Type[] { new ObjectType(
                         "java.lang.Void") });
         c.doGenerate();
